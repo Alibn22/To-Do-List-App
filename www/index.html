@@ -5,13 +5,8 @@
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/angular-material.min.css">
-    <script src="js/angular.min.js"></script>
-    <script src="js/angular-animate.min.js"></script>
-    <script src="js/angular-aria.min.js"></script>
-    <script src="js/angular-messages.min.js"></script>
-    <script src="js/angular-material.min.js"></script>
+    <link rel="stylesheet" href="css/index.main.css">
+    <script src="js/index.main.js"></script>
 </head>
 
 <body ng-app="toDoListApp" ng-controller="toDoListCtrl" ng-cloak>
@@ -60,7 +55,7 @@
             <md-list-item ng-repeat="x in tasks| orderBy:-x.name" ng-if="x.done==true" style="background-color:lightgreen">
                 <p ng-if="x.done == true" style="text-decoration: line-through">{{x.nameT}}</p>
                 <p ng-if="x.done == false">{{x.nameT}}</p>
-                <md-checkbox class="md-secondary" name="don" ng-model="x.done" ng-disabled="x.done" ></md-checkbox>
+                <md-checkbox class="md-secondary" name="don" ng-model="x.done" ng-disabled="x.done"></md-checkbox>
             </md-list-item>
         </md-list>
     </div>
@@ -68,8 +63,6 @@
         <md-button class="md-fab" ng-click="showPrompt($event)">
             <img src="img/add.svg" alt="add" layout-align="center center" style="height: 100%;width: 50%">
         </md-button>
-    </div>
-    <script src="js/index.js"></script>
     </div>
 </body>
 
