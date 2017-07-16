@@ -1,0 +1,30 @@
+{
+  "name": "main",
+  "version": "1.0.0",
+  "description": "To Do List App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alibn22/To-Do-List-App.git"
+  },
+  "keywords": [
+    "tasks"
+  ],
+  "author": "Ali Baghchehban",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alibn22/To-Do-List-App/issues"
+  },
+  "homepage": "https://github.com/Alibn22/To-Do-List-App#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-if": "^2.0.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp-useref": "^3.1.2"
+  }
+}
