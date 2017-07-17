@@ -1,24 +1,34 @@
 {
-    "name": "todolist1.example.com",
-    "displayName": "todolist1",
-    "version": "1.0.0",
-    "description": "A sample Apache Cordova application that responds to the deviceready event.",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "Apache Cordova Team",
-    "license": "Apache-2.0",
-    "dependencies": {
-        "cordova-android": "^6.2.3",
-        "cordova-plugin-whitelist": "^1.3.2"
-    },
-    "cordova": {
-        "plugins": {
-            "cordova-plugin-whitelist": {}
-        },
-        "platforms": [
-            "android"
-        ]
-    }
+  "name": "main",
+  "version": "1.0.0",
+  "description": "To Do List App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alibn22/To-Do-List-App.git"
+  },
+  "keywords": [
+    "tasks"
+  ],
+  "author": "Ali Baghchehban",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alibn22/To-Do-List-App/issues"
+  },
+  "homepage": "https://github.com/Alibn22/To-Do-List-App#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.7.0",
+    "gulp-if": "^2.0.2",
+    "gulp-lazy-minify": "^1.0.1",
+    "gulp-minify": "^1.0.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-useref": "^3.1.2",
+    "pump": "^1.0.2",
+    "run-sequence": "^2.0.0"
+  }
 }
