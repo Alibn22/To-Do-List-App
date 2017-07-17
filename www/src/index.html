@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--build:css css/app.main.css-->
+    <link href="css/index.css" rel="stylesheet">
+     <!--endbuild-->
+     <!--build:css css/vendor.main.css-->
+    <link rel="stylesheet" href="css/angular-material.min.css">
+    <!--endbuild-->
+    <!-- build:js js/vendor.main.js-->
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-animate.min.js"></script>
+    <script src="js/angular-aria.min.js"></script>
+    <script src="js/angular-messages.min.js"></script>
+    <script src="js/angular-material.min.js"></script>
+    <!--endbuild-->
+    <!-- build:js js/app.main.js-->
+    <script src="js/index.js"></script>
+    <!--endbuild-->
+</head>
+
+<body ng-app="toDoListApp" ng-controller="toDoListCtrl" ng-cloak>
+    <div ng-controller="sideNavbarCtrl" layout="column" ng-cloak>
+        <section layout="row" flex>
+            <md-sidenav class="md-sidenav-left" md-component-id="left" md-disable-backdrop md-whiteframe="4">
+                <md-toolbar class="md-theme-indigo">
+                    <md-toolbar-filler layout layout-align="center start" class="navbi">
+                        <md-button class="md-icon-button md-primary" ng-click="toggleLeft()">
+                            <img src="img/close.svg" alt="menu">
+                        </md-button>
+                    </md-toolbar-filler>
+                    <h1 class="head1">My Profile</h1>
+                </md-toolbar>
+                <md-content layout-margin>
+                    <p> number of tasks you entered : {{tasks.length}}</p>
+                    <br><br>
+                    <p>number of tasks you done : {{do}}</p>
+                    <br><br>
+                    <p>number of tasks you not done : {{tasks.length - do}}</p>
+                    <br><br>
+                    <a href="#">about</a>
+                    <br><br>
+                    <a href="#">come soon...</a>
+                </md-content>
+            </md-sidenav>
+            <div layout="column" ng-controller="navbarCtrl" ng-cloak class="navsg">
+                <md-toolbar-filler layout layout-align="start center">
+                    <md-button class="md-icon-button md-primary" ng-click="toggleLeft() ">
+                        <img src="img/menu.svg" alt="menu">
+                    </md-button>
+                    <h1 class="head1">TO Do List</h1>
+                </md-toolbar-filler>
+
+            </div>
+        </section>
+    </div>
+    <div>
+        <md-list ng-cloak>
+
+            <md-list-item ng-repeat="x in tasks | orderBy:-x.name" ng-if="x.done==false">
+                <p ng-if="x.done == true" style="text-decoration: line-through">{{x.nameT}}</p>
+                <p ng-if="x.done == false">{{x.nameT}}</p>
+                <md-checkbox class="md-secondary" name="don" ng-model="x.done" ng-disabled="x.done"></md-checkbox>
+            </md-list-item>
+            <md-list-item ng-repeat="x in tasks| orderBy:-x.name" ng-if="x.done==true" style="background-color:lightgreen">
+                <p ng-if="x.done == true" style="text-decoration: line-through">{{x.nameT}}</p>
+                <p ng-if="x.done == false">{{x.nameT}}</p>
+                <md-checkbox class="md-secondary" name="don" ng-model="x.done" ng-disabled="x.done"></md-checkbox>
+            </md-list-item>
+        </md-list>
+    </div>
+    <div class="lock-size" layout="row" layout-align="center center" style="position: fixed;bottom: 0px;left: 40%">
+        <md-button class="md-fab" ng-click="showPrompt($event)">
+            <img src="img/add.svg" alt="add" layout-align="center center" style="height: 100%;width: 50%">
+        </md-button>
+    </div>
+</body>
+
+</html>
